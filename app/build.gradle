@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.notes.homework_4'
+    namespace 'com.task.homework_4'
     compileSdk 32
 
     // Register kotlin files
@@ -16,7 +16,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.notes.homework_4"
+        applicationId "com.task.homework_4"
         minSdk 24
         targetSdk 32
         versionCode 1
@@ -38,8 +38,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    viewBinding {
-        enabled true
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -56,4 +57,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    // reflection-free flavor
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6'
 }

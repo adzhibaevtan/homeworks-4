@@ -1,4 +1,4 @@
-package com.notes.homework_4.ui.notifications
+package com.task.homework_4.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

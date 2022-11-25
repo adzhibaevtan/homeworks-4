@@ -1,4 +1,4 @@
-package com.notes.homework_4
+package com.task.homework_4
 
 import org.junit.Test
 

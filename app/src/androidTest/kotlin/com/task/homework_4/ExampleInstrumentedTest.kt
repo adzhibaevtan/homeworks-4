@@ -1,4 +1,4 @@
-package com.notes.homework_4
+package com.task.homework_4
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
