@@ -1,42 +1,48 @@
 package com.task.homework_4.ui.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.task.homework_4.R
 import com.task.homework_4.databinding.FragmentHomeBinding
+import com.task.homework_4.ui.home.adapters.TaskAdapter
+import com.task.homework_4.ui.models.Task
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(R.layout.fragment_home) {
+    private val binding by viewBinding(FragmentHomeBinding::bind)
+    private val taskAdapter = TaskAdapter()
+    private val args by navArgs<HomeFragmentArgs>()
+    private var lastInsertedTask: Task? = null
 
-    private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navigateToCreatingNewTask()
+        constructRecycler()
+        insertNewTask()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun constructRecycler() {
+        binding.rvTasks.adapter = taskAdapter
+        binding.rvTasks.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    private fun navigateToCreatingNewTask() {
+        binding.fabCreateTask.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_createNewTaskFragment)
+        }
+    }
+
+    private fun insertNewTask() {
+        if (lastInsertedTask != args.task)
+            args.task?.let {
+                taskAdapter.addTask(it)
+
+                lastInsertedTask?.let { it1 -> taskAdapter.addTask(it1) }
+            }
+        lastInsertedTask = args.task
     }
 }
