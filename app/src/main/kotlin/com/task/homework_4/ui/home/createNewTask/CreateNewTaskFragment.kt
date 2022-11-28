@@ -19,14 +19,21 @@ class CreateNewTaskFragment : Fragment(R.layout.fragment_create_new_task) {
 
     private fun createNewTask() {
         binding.btnAddTask.setOnClickListener {
-            findNavController().navigate(
-                CreateNewTaskFragmentDirections.actionCreateNewTaskFragmentToNavigationHome(
-                    Task(
-                        binding.etTaskTitle.text.toString(),
-                        binding.etTaskDescription.text.toString()
+            if (binding.etTaskTitle.text.toString().isNotEmpty() || binding.etTaskDescription.text.toString().isNotEmpty()) {
+                findNavController().navigate(
+                    CreateNewTaskFragmentDirections.actionCreateNewTaskFragmentToNavigationHome(
+                        Task(
+                            binding.etTaskTitle.text.toString(),
+                            binding.etTaskDescription.text.toString()
+                        )
                     )
                 )
-            )
+            } else {
+                binding.etTaskTitle.error = "Field is empty"
+                binding.etTaskDescription.error = "Field is empty"
+            }
         }
     }
+
+
 }

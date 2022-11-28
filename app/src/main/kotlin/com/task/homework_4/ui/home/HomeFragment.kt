@@ -40,7 +40,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         if (lastInsertedTask != args.task)
             args.task?.let {
                 taskAdapter.addTask(it)
-
                 lastInsertedTask?.let { it1 -> taskAdapter.addTask(it1) }
             }
         lastInsertedTask = args.task

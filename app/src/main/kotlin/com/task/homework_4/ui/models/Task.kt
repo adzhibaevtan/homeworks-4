@@ -17,9 +17,7 @@ data class Task(
         parcel.write(description)
     }
 
-    override fun describeContents(): Int {
-        return 0
-    }
+    override fun describeContents() = 0
 
     companion object CREATOR : Parcelable.Creator<Task> {
         override fun createFromParcel(parcel: Parcel): Task {
