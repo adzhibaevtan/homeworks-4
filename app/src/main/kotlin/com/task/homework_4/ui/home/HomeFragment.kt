@@ -10,13 +10,11 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.task.homework_4.R
 import com.task.homework_4.databinding.FragmentHomeBinding
 import com.task.homework_4.ui.home.adapters.TaskAdapter
-import com.task.homework_4.ui.models.Task
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private val binding by viewBinding(FragmentHomeBinding::bind)
     private val taskAdapter = TaskAdapter()
     private val args by navArgs<HomeFragmentArgs>()
-    private var lastInsertedTask: Task? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,16 +30,19 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun navigateToCreatingNewTask() {
         binding.fabCreateTask.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_home_to_createNewTaskFragment)
+            findNavController().navigate(
+                HomeFragmentDirections.actionNavigationHomeToCreateNewTaskFragment(
+                    taskAdapter.getCurrentList().toTypedArray()
+                )
+            )
         }
     }
 
     private fun insertNewTask() {
-        if (lastInsertedTask != args.task)
-            args.task?.let {
-                taskAdapter.addTask(it)
-                lastInsertedTask?.let { it1 -> taskAdapter.addTask(it1) }
+        args.task?.let {
+            it.forEach { task ->
+                taskAdapter.addTask(task)
             }
-        lastInsertedTask = args.task
+        }
     }
 }

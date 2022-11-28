@@ -25,6 +25,8 @@ class TaskAdapter : Adapter<TaskAdapter.TasksViewHolder>() {
         notifyItemInserted(list.lastIndex)
     }
 
+    fun getCurrentList() = list
+
     inner class TasksViewHolder(private val binding: ItemTaskBinding) : ViewHolder(binding.root) {
         fun onBind(task: Task) {
             binding.tvTaskTitle.text = task.title
