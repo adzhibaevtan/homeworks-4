@@ -10,9 +10,9 @@ import com.task.homework_4.ui.models.OnBoard
 
 class OnBoardingAdapter : Adapter<OnBoardingAdapter.OnBoardingsViewHolder>() {
     private val list = arrayListOf(
-        OnBoard("https://i.giphy.com/media/3oKIPD7IWVJ7UYXaUw/giphy.gif", "1", "1.1"),
-        OnBoard("https://i.giphy.com/media/Y08bx6Fea1BafzTlvc/giphy.gif", "2", "2.1"),
-        OnBoard("https://i.giphy.com/media/3oKIPaihAcHpS6iFPO/giphy.gif", "3", "3.1")
+        OnBoard("https://user-images.githubusercontent.com/98197909/205021390-e13baf5c-7277-42f1-8cf1-4bad466c8c70.gif", "Track your tasks progress", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"),
+        OnBoard("https://user-images.githubusercontent.com/98197909/205022211-949b2712-18df-4ada-94ae-bafc51e2c3c1.gif", "Your personal task manager", "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
+        OnBoard("https://user-images.githubusercontent.com/98197909/205023279-798f542a-7bc1-40f8-87a7-80c076db76ab.gif", "Complete tasks easily", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = OnBoardingsViewHolder(

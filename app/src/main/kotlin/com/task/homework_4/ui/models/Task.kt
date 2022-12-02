@@ -2,14 +2,21 @@ package com.task.homework_4.ui.models
 
 import android.os.Parcel
 import android.os.Parcelable
+;
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity(tableName = "task")
 data class Task(
-    val title: String?,
-    val description: String?
+    val title: String? ,
+    val description: String?,
+    @PrimaryKey(autoGenerate = true)
+    val id:Int? = null
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
-        parcel.readString()
+        parcel.readString(),
+        parcel.readInt(),
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {

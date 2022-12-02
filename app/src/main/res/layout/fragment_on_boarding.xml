@@ -25,7 +25,7 @@
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="300dp"
+        android:layout_marginBottom="200dp"
         android:text="Get started"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
