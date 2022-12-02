@@ -5,12 +5,14 @@
     android:layout_marginHorizontal="24dp"
     android:layout_height="match_parent">
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/vp_image"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="100dp"
-        android:src="@color/purple_500"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/lottie1"
+        app:lottie_loop="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

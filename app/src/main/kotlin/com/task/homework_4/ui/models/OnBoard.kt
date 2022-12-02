@@ -4,18 +4,18 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class OnBoard(
-    val imageUrl: String? = null,
+    val image: Int? = null,
     val title: String? = null,
     val desc: String? = null
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readString(),
+        parcel.readInt(),
         parcel.readString(),
         parcel.readString()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.write(imageUrl)
+        parcel.write(image)
         parcel.write(title)
         parcel.write(desc)
     }

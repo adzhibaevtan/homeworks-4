@@ -25,12 +25,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         navigateToCreatingNewTask()
         constructRecycler()
         insertNewTask()
-
     }
 
     private fun constructRecycler() {
        val result =  App.db.dao().query()
-          taskAdapter = TaskAdapter(this::onLongClick)
+          taskAdapter = TaskAdapter(this::onLongClick,requireContext())
         taskAdapter.addTasks(result)
         binding.rvTasks.adapter = taskAdapter
         binding.rvTasks.layoutManager = LinearLayoutManager(requireContext())

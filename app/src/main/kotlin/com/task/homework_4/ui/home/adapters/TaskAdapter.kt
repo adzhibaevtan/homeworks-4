@@ -1,15 +1,19 @@
 package com.task.homework_4.ui.home.adapters
 
+import android.content.Context
 import android.icu.text.Transliterator
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.task.homework_4.R
 import com.task.homework_4.databinding.ItemTaskBinding
 import com.task.homework_4.ui.models.Task
 
 class TaskAdapter(
     val onLongClick: (task: Task, position: Int) -> Unit,
+    val context: Context
 ) : Adapter<TaskAdapter.TasksViewHolder>()
 
  {
@@ -51,6 +55,17 @@ class TaskAdapter(
             itemView.setOnLongClickListener {
                 onLongClick(task, absoluteAdapterPosition)
                 return@setOnLongClickListener true
+
+            }
+            if (adapterPosition%2 == 0){
+                binding.root.setBackgroundColor(ContextCompat.getColor(context, R.color.black))
+                binding.tvTaskDescription.setTextColor(ContextCompat.getColor(context,R.color.white))
+                binding.tvTaskTitle.setTextColor(ContextCompat.getColor(context,R.color.white))
+
+            }else{
+                binding.root.setBackgroundColor(ContextCompat.getColor(context, R.color.white))
+                binding.tvTaskDescription.setTextColor(ContextCompat.getColor(context, R.color.black))
+                binding.tvTaskTitle.setTextColor(ContextCompat.getColor(context, R.color.black))
             }
 
 
