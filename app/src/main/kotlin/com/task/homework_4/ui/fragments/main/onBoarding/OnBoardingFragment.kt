@@ -1,4 +1,4 @@
-package com.task.homework_4.ui.onBoarding
+package com.task.homework_4.ui.fragments.main.onBoarding
 
 import android.content.Context
 import android.os.Bundle
@@ -11,7 +11,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.task.homework_4.R
 import com.task.homework_4.data.local.preferences.PreferencesManager
 import com.task.homework_4.databinding.FragmentOnBoardingBinding
-import com.task.homework_4.ui.onBoarding.adapter.OnBoardingAdapter
+import com.task.homework_4.ui.fragments.main.onBoarding.adapter.OnBoardingAdapter
 
 class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding) {
     private val binding by viewBinding(FragmentOnBoardingBinding::bind)
@@ -42,7 +42,7 @@ class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding) {
     }
 
     private fun setupListeners() {
-        listOf<View>(binding.skip,binding.start).forEach {
+        listOf<View>(binding.skip, binding.start).forEach {
             it.setOnClickListener {
                 navigateToHome()
             }
@@ -51,12 +51,12 @@ class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding) {
 
     private fun navigateToHomeIfUserHasSeenOnboard() {
         if (preferencesManager.hasUserSeenOnBoarding) {
-            findNavController().navigate(R.id.action_onBoardingFragment_to_navigation_home)
+            findNavController().navigate(R.id.action_onBoardingFragment_to_inputPhoneNumberFragment)
         }
     }
 
     private fun navigateToHome() {
         preferencesManager.hasUserSeenOnBoarding = true
-        findNavController().navigate(R.id.action_onBoardingFragment_to_navigation_home)
+        findNavController().navigate(R.id.action_onBoardingFragment_to_inputPhoneNumberFragment)
     }
 }

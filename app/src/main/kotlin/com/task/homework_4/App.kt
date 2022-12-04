@@ -3,7 +3,7 @@ package com.task.homework_4
 import android.app.Application
 import android.content.Context
 import androidx.room.Room
-import com.task.homework_4.data.room.AppDataBase
+import com.task.homework_4.data.local.room.AppDataBase
 
 class App : Application() {
 
@@ -16,6 +16,6 @@ class App : Application() {
     }
 
     companion object{
-        lateinit var  db:AppDataBase
+        lateinit var  db: AppDataBase
     }
 }

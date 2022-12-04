@@ -1,4 +1,4 @@
-package com.task.homework_4.ui.home
+package com.task.homework_4.ui.fragments.main.home
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -12,7 +12,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.task.homework_4.App
 import com.task.homework_4.R
 import com.task.homework_4.databinding.FragmentHomeBinding
-import com.task.homework_4.ui.home.adapters.TaskAdapter
+import com.task.homework_4.ui.fragments.main.home.adapters.TaskAdapter
 import com.task.homework_4.ui.models.Task
 
 class HomeFragment : Fragment(R.layout.fragment_home) {

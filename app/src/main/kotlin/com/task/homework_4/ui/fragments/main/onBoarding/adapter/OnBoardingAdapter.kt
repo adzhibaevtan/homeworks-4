@@ -1,4 +1,4 @@
-package com.task.homework_4.ui.onBoarding.adapter
+package com.task.homework_4.ui.fragments.main.onBoarding.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

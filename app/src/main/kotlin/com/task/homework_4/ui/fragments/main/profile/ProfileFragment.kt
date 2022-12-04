@@ -1,4 +1,4 @@
-package com.task.homework_4.ui.profile
+package com.task.homework_4.ui.fragments.main.profile
 
 import android.Manifest
 import android.content.Context

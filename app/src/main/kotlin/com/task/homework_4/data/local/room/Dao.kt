@@ -1,4 +1,4 @@
-package com.task.homework_4.data.room
+package com.task.homework_4.data.local.room
 
 import androidx.room.Delete
 import androidx.room.Insert

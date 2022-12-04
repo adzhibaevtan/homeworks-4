@@ -1,7 +1,6 @@
-package com.task.homework_4.ui.home.adapters
+package com.task.homework_4.ui.fragments.main.home.adapters
 
 import android.content.Context
-import android.icu.text.Transliterator
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -14,9 +13,7 @@ import com.task.homework_4.ui.models.Task
 class TaskAdapter(
     val onLongClick: (task: Task, position: Int) -> Unit,
     val context: Context
-) : Adapter<TaskAdapter.TasksViewHolder>()
-
- {
+) : Adapter<TaskAdapter.TasksViewHolder>() {
     private val list = arrayListOf<Task>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = TasksViewHolder(
@@ -35,10 +32,10 @@ class TaskAdapter(
         notifyItemInserted(list.lastIndex)
     }
 
-     fun deleteItem(position: Int){
-         list.removeAt(position)
-         notifyDataSetChanged()
-     }
+    fun deleteItem(position: Int) {
+        list.removeAt(position)
+        notifyItemRemoved(position)
+    }
 
     fun addTasks(task: List<Task>) {
         this.list.clear()
@@ -57,14 +54,24 @@ class TaskAdapter(
                 return@setOnLongClickListener true
 
             }
-            if (adapterPosition%2 == 0){
+            if (adapterPosition % 2 == 0) {
                 binding.root.setBackgroundColor(ContextCompat.getColor(context, R.color.black))
-                binding.tvTaskDescription.setTextColor(ContextCompat.getColor(context,R.color.white))
-                binding.tvTaskTitle.setTextColor(ContextCompat.getColor(context,R.color.white))
+                binding.tvTaskDescription.setTextColor(
+                    ContextCompat.getColor(
+                        context,
+                        R.color.white
+                    )
+                )
+                binding.tvTaskTitle.setTextColor(ContextCompat.getColor(context, R.color.white))
 
-            }else{
+            } else {
                 binding.root.setBackgroundColor(ContextCompat.getColor(context, R.color.white))
-                binding.tvTaskDescription.setTextColor(ContextCompat.getColor(context, R.color.black))
+                binding.tvTaskDescription.setTextColor(
+                    ContextCompat.getColor(
+                        context,
+                        R.color.black
+                    )
+                )
                 binding.tvTaskTitle.setTextColor(ContextCompat.getColor(context, R.color.black))
             }
 

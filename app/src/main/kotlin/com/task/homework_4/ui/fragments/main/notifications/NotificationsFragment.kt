@@ -1,4 +1,4 @@
-package com.task.homework_4.ui.dashboard
+package com.task.homework_4.ui.fragments.main.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.task.homework_4.databinding.FragmentDashboardBinding
+import com.task.homework_4.databinding.FragmentNotificationsBinding
 
-class DashboardFragment : Fragment() {
+class NotificationsFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentNotificationsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,7 +23,7 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
     }

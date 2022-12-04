@@ -1,4 +1,4 @@
-package com.task.homework_4.ui.home.createNewTask
+package com.task.homework_4.ui.fragments.main.home.createNewTask
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.task.homework_4.App
 import com.task.homework_4.R
 import com.task.homework_4.databinding.FragmentCreateNewTaskBinding
-import com.task.homework_4.ui.home.adapters.TaskAdapter
 import com.task.homework_4.ui.models.Task
 
 class CreateNewTaskFragment : Fragment(R.layout.fragment_create_new_task) {
@@ -33,13 +32,9 @@ class CreateNewTaskFragment : Fragment(R.layout.fragment_create_new_task) {
                     )
                 )
             } else {
-
                 binding.etTaskTitle.error = "Field is empty"
                 binding.etTaskDescription.error = "Field is empty"
             }
-
         }
     }
-
-
 }

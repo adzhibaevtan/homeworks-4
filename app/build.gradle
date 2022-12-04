@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -57,7 +58,12 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
 
-//    implementation 'androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3'
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.6.1'
+
+    // Masked Edit Text
+    implementation 'io.github.vicmikhailau:MaskedEditText:4.0.7'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
@@ -78,6 +84,11 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
 
-    //lottie
-    implementation 'com.airbnb.android:lottie:3.6.1'
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
+
+    //PinView
+    implementation 'io.github.chaosleung:pinview:1.4.4'
 }
