@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace 'com.task.homework_4'
+    namespace 'com.task.homeworks_4'
     compileSdk 33
 
     // Register kotlin files
@@ -19,7 +19,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.task.homework_4"
+        applicationId "com.task.homeworks_4"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -55,18 +55,18 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
 
     //lottie
     implementation 'com.airbnb.android:lottie:3.6.1'
 
-    // Masked Edit Text
+    // masked edit text
     implementation 'io.github.vicmikhailau:MaskedEditText:4.0.7'
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
     // reflection-free flavor
     implementation 'com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6'
@@ -89,6 +89,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
     implementation 'com.google.firebase:firebase-firestore:24.4.1'
 
-    //PinView
+    //pin view
     implementation 'io.github.chaosleung:pinview:1.4.4'
 }
